@@ -1,252 +1,97 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DRIPZONE | Streetwear para todos os estilos</title>
-<meta name="description" content="Streetwear urbano para usar, presentear ou montar seu pedido com condições especiais por quantidade.">
-<meta property="og:title" content="DRIPZONE Streetwear">
-<meta property="og:image" content="assets/logo.png">
-<link rel="icon" href="assets/logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,700;1,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>DRIPZONE Streetwear</title><meta name="description" content="DRIPZONE: streetwear para quem tem presença. R$50 a peça, R$40 a partir de 6 peças.">
 <style>
-:root{--bg:#fff;--fg:#0a0a0a;--mut:#6b6b6b;--line:#e4e4e4;--dark:#0a0a0a;--soft:#f3f3f3;
---disp:"Barlow Condensed","Arial Narrow",Impact,sans-serif;--body:Inter,system-ui,sans-serif;--max:1200px}
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--body);color:var(--fg);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
-.disp{font-family:var(--disp);font-style:italic;font-weight:800;text-transform:uppercase;letter-spacing:.01em;line-height:.95}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 28px;font:600 14px var(--body);letter-spacing:.12em;text-transform:uppercase;border:2px solid var(--fg);background:var(--fg);color:#fff;cursor:pointer;transition:.2s}
-.btn:hover{background:#fff;color:var(--fg)}
-.btn.ghost{background:transparent;color:#fff;border-color:#fff}
-.btn.ghost:hover{background:#fff;color:var(--fg)}
-.btn.light{background:#fff;color:var(--fg);border-color:#fff}
-.btn.light:hover{background:transparent;color:#fff}
-/* faixa promo */
-.promo{background:var(--dark);color:#fff;font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-align:center;padding:9px 12px}
-.promo span{opacity:.6;margin:0 8px}
-/* header */
-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
-.bar{display:flex;align-items:center;gap:20px;height:72px}
-.logo img{width:52px;height:52px;border-radius:50%}
-.search{flex:1;max-width:460px;position:relative}
-.search input{width:100%;height:44px;border:1px solid var(--line);background:var(--soft);padding:0 16px;font:400 14px var(--body);outline:none}
-.search input:focus{border-color:var(--fg);background:#fff}
-.icons{display:flex;gap:6px;margin-left:auto;align-items:center}
-.ib{width:44px;height:44px;display:grid;place-items:center;background:none;border:0;cursor:pointer;position:relative}
-.ib svg{width:22px;height:22px;stroke:var(--fg);fill:none;stroke-width:1.8}
-.cnt{position:absolute;top:4px;right:2px;background:var(--fg);color:#fff;font-size:10px;font-weight:600;min-width:17px;height:17px;border-radius:9px;display:grid;place-items:center}
-.wa{display:flex;align-items:center;gap:8px;height:44px;padding:0 16px;background:var(--fg);color:#fff;font:600 12px var(--body);letter-spacing:.1em;text-transform:uppercase}
-nav.cats{border-top:1px solid var(--line)}
-nav.cats ul{list-style:none;padding:0;display:flex;gap:26px;overflow-x:auto;scrollbar-width:none;height:46px;align-items:center}
-nav.cats a{font:500 13px var(--body);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;color:var(--mut)}
-nav.cats a:hover{color:var(--fg)}
-.burger{display:none}
-/* hero */
-.hero{background:var(--dark);color:#fff;position:relative;overflow:hidden;min-height:560px;display:flex;align-items:center}
-.hero::before{content:"DZ";position:absolute;right:-2%;top:50%;transform:translateY(-50%);font:italic 800 clamp(280px,42vw,620px)/1 var(--disp);color:#141414;letter-spacing:-.04em}
-.hero .wrap{position:relative;padding-top:70px;padding-bottom:70px}
-.tag{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:#a8a8a8;margin-bottom:18px}
-.hero h1{font-size:clamp(56px,11vw,132px);margin-bottom:22px}
-.hero p{max-width:520px;color:#cfcfcf;font-size:17px;margin-bottom:34px}
-.hero .cta{display:flex;gap:14px;flex-wrap:wrap}
-/* seções */
-section{padding:80px 0}
-.sh{display:flex;justify-content:space-between;align-items:end;margin-bottom:34px;gap:16px}
-.sh h2{font-size:clamp(36px,5vw,58px)}
-.sh a{font:600 12px var(--body);letter-spacing:.14em;text-transform:uppercase;border-bottom:2px solid var(--fg);padding-bottom:3px;white-space:nowrap}
-.grid{display:grid;gap:16px}
-.g4{grid-template-columns:repeat(4,1fr)}
-.g3{grid-template-columns:repeat(3,1fr)}
-.card-cat{position:relative;aspect-ratio:3/4;background:linear-gradient(160deg,#222,#0a0a0a);color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:22px;overflow:hidden;transition:.25s}
-.card-cat:hover{transform:translateY(-4px)}
-.card-cat h3{font-size:34px}
-.card-cat span{font:600 11px var(--body);letter-spacing:.16em;text-transform:uppercase;margin-top:10px;opacity:.75}
-.card-cat i{position:absolute;top:16px;right:18px;font:italic 800 60px var(--disp);color:#ffffff14}
-/* vitrine vazia (dados reais virão do banco) */
-.empty{border:1px dashed #bbb;background:var(--soft);padding:48px 24px;text-align:center;color:var(--mut)}
-.empty strong{display:block;color:var(--fg);font-size:16px;margin-bottom:6px}
-.dark{background:var(--dark);color:#fff}
-.dark .empty{background:#141414;border-color:#333;color:#999}
-.dark .empty strong{color:#fff}
-/* preços progressivos */
-.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.step{padding:28px;border:1px solid var(--line);background:#fff}
-.step b{font:italic 800 56px var(--disp);color:#d0d0d0;display:block;line-height:1}
-.step h3{font-size:17px;margin:10px 0 6px}
-.step p{color:var(--mut);font-size:14px}
-.tierbox{margin-top:16px;background:var(--dark);color:#fff;padding:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.tierbox div small{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#999;margin-bottom:6px}
-.tierbox div strong{font:italic 800 34px var(--disp);text-transform:uppercase}
-.note{font-size:12px;color:var(--mut);margin-top:10px}
-.dark .note{color:#888}
-/* benefícios */
-.ben{padding:24px;border:1px solid #2b2b2b}
-.ben h3{font-size:16px;margin-bottom:6px}
-.ben p{font-size:14px;color:#a5a5a5}
-/* faq */
-details{border-bottom:1px solid var(--line);padding:18px 0}
-summary{font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between}
-summary::after{content:"+";font-size:20px}
-details[open] summary::after{content:"–"}
-details p{margin-top:10px;color:var(--mut);font-size:15px}
-.two{display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:start}
-/* footer */
-footer{background:var(--dark);color:#bbb;padding:64px 0 28px}
-.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
-footer h4{color:#fff;font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px}
-footer li{list-style:none;margin-bottom:8px;font-size:14px}
-footer ul{padding:0}
-footer a:hover{color:#fff}
-footer img{width:84px;border-radius:50%;margin-bottom:14px}
-.copy{border-top:1px solid #222;margin-top:40px;padding-top:20px;font-size:12px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
-.todo{color:#777;font-style:italic}
-/* mobile */
-@media(max-width:860px){
- .g4{grid-template-columns:repeat(2,1fr)}.g3,.tiers,.tierbox{grid-template-columns:1fr}
- .two{grid-template-columns:1fr;gap:28px}.fg{grid-template-columns:1fr 1fr}
- .search{display:none}.wa span{display:none}.wa{padding:0 12px}
- section{padding:56px 0}.hero{min-height:480px}
- .bar{gap:8px}
-}
-@media(max-width:480px){.fg{grid-template-columns:1fr}.card-cat h3{font-size:26px}}
-@media(prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
-</style>
-</head>
-<body>
-
-<!-- Faixa promocional: editável no painel (config: promo_bar) -->
-<div class="promo" id="promo">DRIPZONE | Streetwear para todos os estilos <span>•</span> Compre uma peça ou aproveite condições especiais por quantidade</div>
-
-<header>
- <div class="wrap bar">
-  <a class="logo" href="index.html" aria-label="DRIPZONE - início"><img src="assets/logo.png" alt="DRIPZONE Streetwear"></a>
-  <form class="search" role="search" onsubmit="return false"><input type="search" placeholder="Buscar por nome, categoria, SKU ou cor" aria-label="Buscar produtos"></form>
-  <div class="icons">
-   <a class="ib" href="#" aria-label="Minha conta"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></a>
-   <a class="ib" href="#" aria-label="Favoritos"><svg viewBox="0 0 24 24"><path d="M12 21s-8-5-8-11a4.5 4.5 0 018-2.8A4.5 4.5 0 0120 10c0 6-8 11-8 11z"/></svg></a>
-   <a class="ib" href="#" aria-label="Carrinho"><svg viewBox="0 0 24 24"><path d="M5 7h14l-1.5 13h-11z"/><path d="M9 7a3 3 0 016 0"/></svg><span class="cnt" id="cartCount">0</span></a>
-   <!-- número vem de config: whatsapp_number -->
-   <a class="wa" id="waBtn" href="#" aria-label="Atendimento por WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm5.2 13.9c-.2.6-1.300 1.200-1.800 1.200-.5.100-1 .2-3.300-.7-2.800-1.200-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800s.7-2 1-2.300c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.8 2c.1.200.1.400 0 .5l-.4.600c-.1.200-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.200 1 2.100 1.300 2.400 1.500.3.100.5.100.6-.1l.9-1c.2-.3.400-.2.600-.1l1.900.9c.3.100.5.200.5.300.1.200.1.700-.1 1.300z"/></svg><span>WhatsApp</span></a>
-  </div>
- </div>
- <nav class="cats" aria-label="Categorias"><div class="wrap"><ul id="catNav">
-  <li><a href="#categorias">Camisetas streetwear</a></li><li><a href="#categorias">Camisetas básicas</a></li><li><a href="#categorias">Camisetas estampadas</a></li><li><a href="#categorias">Bermudas</a></li><li><a href="#categorias">Calças</a></li><li><a href="#kits">Kits e combos</a></li><li><a href="#lancamentos">Novidades</a></li><li><a href="#kits">Ofertas</a></li>
- </ul></div></nav>
-</header>
-
-<main>
-<!-- 1. Banner -->
-<div class="hero">
- <div class="wrap">
-  <p class="tag">DRIPZONE Streetwear</p>
-  <h1 class="disp">Seu estilo.<br>Sua zona.</h1>
-  <p>Streetwear urbano para usar, presentear ou montar seu pedido com condições especiais por quantidade.</p>
-  <div class="cta"><a class="btn light" href="#destaques">Ver produtos</a><a class="btn ghost" href="#kits">Conhecer kits</a></div>
- </div>
-</div>
-
-<!-- 2. Categorias -->
-<section id="categorias"><div class="wrap">
- <div class="sh"><h2 class="disp">Categorias</h2><a href="#">Ver tudo</a></div>
- <div class="grid g4" id="catGrid">
-  <a class="card-cat" href="#"><i>01</i><h3 class="disp">Camisetas<br>streetwear</h3><span>Ver produtos →</span></a>
-  <a class="card-cat" href="#"><i>02</i><h3 class="disp">Camisetas<br>básicas</h3><span>Ver produtos →</span></a>
-  <a class="card-cat" href="#"><i>03</i><h3 class="disp">Camisetas<br>estampadas</h3><span>Ver produtos →</span></a>
-  <a class="card-cat" href="#"><i>04</i><h3 class="disp">Bermudas</h3><span>Ver produtos →</span></a>
- </div>
- <p class="note">Categorias e imagens dos cards serão gerenciadas pelo painel administrativo. As fotos entram quando os produtos reais forem cadastrados.</p>
-</div></section>
-
-<!-- 3. Destaques -->
-<section id="destaques" style="padding-top:0"><div class="wrap">
- <div class="sh"><h2 class="disp">Em destaque</h2><a href="#">Todos os produtos</a></div>
- <div class="empty" id="featured"><strong>Nenhum produto em destaque ainda</strong>Os destaques serão definidos no painel e ordenados por dados reais de venda. Nada aqui é fictício.</div>
-</div></section>
-
-<!-- 7. Como comprar + condições progressivas (valores virão de price_rules) -->
-<section style="background:var(--soft)"><div class="wrap">
- <div class="sh"><h2 class="disp">Como comprar</h2></div>
- <div class="tiers">
-  <div class="step"><b>01</b><h3>Escolha seus produtos</h3><p>Selecione modelos, tamanhos e cores.</p></div>
-  <div class="step"><b>02</b><h3>Adicione ao carrinho</h3><p>Leve uma peça ou várias, misturando o que quiser.</p></div>
-  <div class="step"><b>03</b><h3>Finalize e acompanhe</h3><p>Conclua o pedido e acompanhe a entrega na sua conta.</p></div>
- </div>
- <div class="tierbox" id="tiers" aria-live="polite">
-  <div><small>1 peça</small><strong>Preço unitário padrão</strong></div>
-  <div><small>A partir de X peças</small><strong>Preço reduzido por unidade</strong></div>
-  <div><small>Kits e combos</small><strong>Condições especiais</strong></div>
- </div>
- <p class="note">Faixas e valores são carregados das regras ativas no painel. Enquanto nenhuma regra estiver publicada, nenhum desconto é exibido ou aplicado.</p>
-</div></section>
-
-<!-- 4. Kits -->
-<section id="kits" class="dark"><div class="wrap">
- <div class="sh"><h2 class="disp">Monte seu pedido<br>e economize</h2><a href="#" style="border-color:#fff">Ver kits</a></div>
- <p style="color:#bbb;max-width:560px;margin-bottom:28px">Mais peças, melhor condição. Kits para todos os estilos.</p>
- <div class="empty" id="kitsBox"><strong>Nenhum kit cadastrado</strong>Kits e combos aparecem aqui assim que forem criados e ativados no painel.</div>
-</div></section>
-
-<!-- 5. Benefícios (editáveis) -->
-<section class="dark" style="padding-top:0"><div class="wrap">
- <div class="sh"><h2 class="disp">Por que DRIPZONE</h2></div>
- <div class="grid g3" id="benefits">
-  <div class="ben"><h3>Uma peça ou várias</h3><p>Compra unitária ou em quantidade, do seu jeito.</p></div>
-  <div class="ben"><h3>Condições progressivas</h3><p>Quanto mais peças, melhor a condição por unidade.</p></div>
-  <div class="ben"><h3>Variedade de modelos</h3><p>Misture modelos, tamanhos e cores no mesmo pedido.</p></div>
-  <div class="ben"><h3>Compra online</h3><p>Pedido pelo site, com acompanhamento na sua conta.</p></div>
-  <div class="ben"><h3>Atendimento no WhatsApp</h3><p>Tire dúvidas sobre produtos, kits e pedidos.</p></div>
-  <div class="ben"><h3>Kits personalizados</h3><p>Quando disponíveis, consulte pelo atendimento.</p></div>
- </div>
-</div></section>
-
-<!-- 6. Lançamentos -->
-<section id="lancamentos"><div class="wrap">
- <div class="sh"><h2 class="disp">Lançamentos</h2><a href="#">Ver novidades</a></div>
- <div class="empty"><strong>Sem lançamentos no momento</strong>Os produtos recém-cadastrados aparecem aqui automaticamente.</div>
-</div></section>
-
-<!-- 8. Atendimento / FAQ -->
-<section style="background:var(--soft)" id="duvidas"><div class="wrap two">
- <div>
-  <h2 class="disp" style="font-size:clamp(36px,5vw,58px);margin-bottom:16px">Precisa de ajuda?</h2>
-  <p style="color:var(--mut);margin-bottom:24px">Fale com a gente sobre produtos, kits, condições por quantidade ou pedidos.</p>
-  <a class="btn" id="waBtn2" href="#">Chamar no WhatsApp</a>
- </div>
- <div id="faq">
-  <details><summary>Posso comprar só uma peça?</summary><p>Sim, exceto em produtos que tenham quantidade mínima configurada, o que será informado na página do produto.</p></details>
-  <details><summary>Como funcionam as condições por quantidade?</summary><p>Ao atingir a quantidade definida em uma regra ativa, o preço por unidade é reduzido. A regra aplicada aparece no produto e no carrinho.</p></details>
-  <details><summary>Posso misturar modelos, tamanhos e cores?</summary><p>Quando a regra permitir, sim. A condição informa se peças diferentes somam para atingir a faixa.</p></details>
-  <details><summary>Como acompanho meu pedido?</summary><p>Pela área do cliente, com o código de rastreamento assim que o pedido for enviado.</p></details>
- </div>
-</div></section>
-</main>
-
-<footer><div class="wrap">
- <div class="fg">
-  <div><img src="assets/logo.png" alt="DRIPZONE"><p style="font-size:14px;max-width:280px">Streetwear urbano para todos os estilos.</p></div>
-  <div><h4>Categorias</h4><ul><li><a href="#categorias">Camisetas</a></li><li><a href="#categorias">Bermudas</a></li><li><a href="#categorias">Calças</a></li><li><a href="#kits">Kits e combos</a></li></ul></div>
-  <div><h4>Atendimento</h4><ul><li><a href="#" id="waFoot">WhatsApp</a></li><li class="todo" id="mail">E-mail comercial: a configurar</li><li><a href="#duvidas">Dúvidas frequentes</a></li><li><a href="#">Contato</a></li></ul></div>
-  <div><h4>Loja</h4><ul><li><a href="#">Trocas e devoluções</a></li><li><a href="#">Frete e entrega</a></li><li><a href="#">Privacidade</a></li><li><a href="#">Termos de uso</a></li></ul></div>
- </div>
- <div class="copy"><span>© <span id="yr"></span> DRIPZONE. Todos os direitos reservados.</span><span class="todo">CNPJ, redes sociais e formas de pagamento: a configurar</span></div>
-</div></footer>
-
+:root{--bg:#fff;--fg:#0a0a0a;--mu:#6b6b6b;--ln:#e4e4e4;--cd:#f4f4f4}@media(prefers-color-scheme:dark){:root{--bg:#0a0a0a;--fg:#f5f5f5;--mu:#999;--ln:#2a2a2a;--cd:#161616}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.45 system-ui,sans-serif}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit;color:inherit}
+header{position:sticky;top:0;z-index:5;background:var(--fg);color:var(--bg);display:flex;align-items:center;gap:10px;padding:10px 14px}header img{height:38px;border-radius:50%}header b{letter-spacing:.2em}.sp{flex:1}
+header input{background:#8883;border:0;border-radius:8px;padding:8px 10px;min-width:0;width:120px;color:inherit}.ic{font-size:20px;padding:8px;position:relative}.ic i{position:absolute;top:0;right:0;background:var(--bg);color:var(--fg);border-radius:9px;font:700 11px/16px sans-serif;min-width:16px;text-align:center;font-style:normal}
+nav{display:flex;gap:6px;overflow-x:auto;padding:10px 14px;border-bottom:1px solid var(--ln)}nav a{white-space:nowrap;padding:8px 14px;border:1px solid var(--ln);border-radius:20px;font-size:13px;font-weight:600}
+main{max-width:1100px;margin:auto;padding:14px}h1,h2{text-transform:uppercase;letter-spacing:.03em;margin:22px 0 12px}
+.hero{background:#0a0a0a;color:#fff;border-radius:14px;padding:44px 22px;text-align:center}.hero h1{font-size:clamp(28px,7vw,52px);margin:0 0 8px}.hero p{color:#bbb;margin:0 0 20px}
+.btn{display:inline-block;background:var(--fg);color:var(--bg);border:0;border-radius:10px;padding:13px 20px;font-weight:700;cursor:pointer;min-height:46px;text-align:center}.hero .btn{background:#fff;color:#000}.btn.o{background:none;color:var(--fg);border:1px solid var(--fg)}.btn.w{background:#16a34a;color:#fff;width:100%}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}@media(min-width:800px){.grid{grid-template-columns:repeat(4,1fr);gap:16px}}
+.card{background:var(--cd);border-radius:12px;overflow:hidden;position:relative}.im{aspect-ratio:3/4;background:var(--ln) center/cover;display:block}.card .t{padding:10px}small,.mu{color:var(--mu)}.fv{position:absolute;top:6px;right:6px;background:var(--bg);border:0;border-radius:50%;width:36px;height:36px;cursor:pointer}
+.tag{position:absolute;top:8px;left:8px;background:var(--fg);color:var(--bg);font:700 10px sans-serif;padding:3px 7px;border-radius:5px}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tiles,.trust{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;text-align:center}@media(min-width:800px){.tiles{grid-template-columns:repeat(4,1fr)}}.tiles a{background:var(--cd);border-radius:12px;padding:26px 8px;font-weight:700}.trust div{border:1px solid var(--ln);border-radius:10px;padding:12px;font-size:13px}
+.pg{display:grid;gap:18px}@media(min-width:800px){.pg{grid-template-columns:1fr 1fr}}.big{aspect-ratio:3/4;background:var(--cd) center/contain no-repeat;border-radius:12px}.th{display:flex;gap:6px;margin-top:8px;overflow-x:auto}.th span{width:60px;height:76px;background:var(--cd) center/cover;border-radius:8px;flex:none;border:2px solid transparent}.th .on{border-color:var(--fg)}
+.sz{padding:10px 16px;border:1px solid var(--ln);background:none;border-radius:8px;cursor:pointer;font-weight:700}.sz.on{background:var(--fg);color:var(--bg)}.sz[disabled]{text-decoration:line-through;opacity:.4}
+input,select,textarea{background:var(--bg);border:1px solid var(--ln);border-radius:8px;padding:11px;width:100%}label{display:block;font-size:13px;margin:10px 0 4px;color:var(--mu)}.bar{background:var(--cd);border-radius:10px;padding:12px;margin:10px 0;font-weight:600}
+.ci{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--ln)}.ci .im{width:64px;height:80px;aspect-ratio:auto;border-radius:8px;flex:none}.f2{display:grid;grid-template-columns:1fr 1fr;gap:8px}.full{grid-column:1/3}
+footer{background:var(--fg);color:var(--bg);padding:28px 14px;margin-top:30px;font-size:13px}footer a{margin-right:12px;display:inline-block;margin-bottom:6px}.thumbs{display:flex;gap:8px;flex-wrap:wrap}.thumbs div{width:92px;text-align:center;font-size:11px}.thumbs span{display:block;aspect-ratio:3/4;background:var(--cd) center/cover;border-radius:8px}
+input[type=checkbox]{width:auto}
+</style></head><body>
+<header><a href="#/"><img src="data:image/webp;base64,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" alt="DRIPZONE"></a><b>DRIPZONE</b><span class="sp"></span><input id="q" placeholder="Pesquisar"><a class="ic" href="#/fav">♡</a><a class="ic" href="#/admin">👤</a><a class="ic" href="#/carrinho">🛒<i id="cc">0</i></a></header>
+<nav id="nav"></nav><main id="app">Carregando…</main>
+<footer><b style="letter-spacing:.2em">DRIPZONE</b><br>Streetwear para quem tem presença.<br><br><a href="#/">Início</a><a href="#/produtos">Produtos</a><a href="#/cat/lancamentos">Lançamentos</a><a href="#/cat/ofertas">Ofertas</a><a href="#/info/trocas">Trocas e devoluções</a><a href="#/info/privacidade">Privacidade</a><a href="#/info/termos">Termos</a><br>Instagram: <a href="https://instagram.com/dripzone.atacado" target="_blank">@dripzone.atacado</a> WhatsApp: <span id="fw"></span></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
 <script>
-// Configurações da loja: no projeto final virão do Supabase (tabela store_settings).
-const STORE={ whatsapp:"" /* somente dígitos com DDI, ex.: 55DDDNUMERO */ };
-document.getElementById("yr").textContent=new Date().getFullYear();
-const msg=encodeURIComponent("Olá! Vim pelo site da DRIPZONE e gostaria de atendimento.");
-["waBtn","waBtn2","waFoot"].forEach(id=>{
-  const a=document.getElementById(id);
-  if(STORE.whatsapp){a.href="https://wa.me/"+STORE.whatsapp+"?text="+msg;a.target="_blank";a.rel="noopener"}
-  else{a.href="#";a.addEventListener("click",e=>{e.preventDefault();alert("WhatsApp ainda não configurado. Defina o número no painel administrativo.")})}
-});
-</script>
-</body>
-</html>
+/* ====== PREENCHA AQUI (Supabase → Project Settings → API) ====== */
+const SUPABASE_URL='https://bfujbcuywnqzlroyqvne.supabase.co';
+const SUPABASE_KEY='sb_publishable_50qPXZjYFL5YCwlaVpk5iQ_mdXIuBAG';
+/* ================================================================ */
+const $=s=>document.querySelector(s),R=n=>'R$ '+(+n).toFixed(2).replace('.',','),L=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))||d}catch(e){return d}},S=(k,v)=>localStorage.setItem(k,JSON.stringify(v));
+const SZ=['P','M','G','GG'],er=e=>{if(e){alert(e.message||e);return true}};
+if(SUPABASE_URL.includes('URL_DO')){document.getElementById('app').innerHTML='<h1>Falta configurar</h1><p>Edite o arquivo e preencha SUPABASE_URL e SUPABASE_KEY.</p>'}
+const sb=SUPABASE_URL.includes('URL_DO')?null:supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
+let st={whatsapp:'5511973215933',price_normal:50,price_bulk:40,bulk_min_qty:6,flat_shipping:0},CAT=[],P=[],cart=L('dz_c',[]),fav=L('dz_f',[]),adm=false,sel=null,gi=0,qty=1,draft=null,files=[],page=0;
+const iu=p=>SUPABASE_URL+'/storage/v1/object/public/product-images/'+p,imgs=p=>[...(p.product_images||[])].sort((a,b)=>a.position-b.position),mi=p=>{const i=imgs(p)[0];return i?`style="background-image:url(${iu(i.storage_path)})"`:''};
+const vs=p=>[...(p.product_variants||[])].sort((a,b)=>SZ.indexOf(a.size)-SZ.indexOf(b.size)),tot=p=>vs(p).reduce((a,v)=>a+v.stock,0),pieces=()=>cart.reduce((a,b)=>a+b.q,0),unit=n=>n>=st.bulk_min_qty?+st.price_bulk:+st.price_normal;
+const saveC=()=>S('dz_c',cart),track=(e,d)=>{try{(window.dataLayer=window.dataLayer||[]).push({event:e,...d})}catch(x){}};
+async function load(){const[{data:s},{data:c},{data:p},{data:u}]=await Promise.all([sb.from('store_settings').select('*').single(),sb.from('categories').select('*').order('position'),sb.from('products').select('*,categories(name,slug),product_images(id,storage_path,position),product_variants(id,size,stock)').order('created_at',{ascending:false}),sb.auth.getUser().then(async r=>r.data.user?await sb.from('profiles').select('is_admin').eq('id',r.data.user.id).single():{data:null})]);
+if(s)st=s;CAT=c||[];P=p||[];adm=!!(u&&u.is_admin);route()}
+const act=()=>P.filter(p=>p.active),catn=p=>p.categories?.name||'';
+function card(p){return `<div class="card"><a href="#/p/${p.slug}"><span class="im" ${mi(p)}></span></a>${p.is_new?'<span class="tag">NOVO</span>':p.is_offer?'<span class="tag">OFERTA</span>':''}<button class="fv" onclick="tf('${p.id}')">${fav.includes(p.id)?'♥':'♡'}</button><div class="t"><small>${catn(p)}</small><br><a href="#/p/${p.slug}"><b>${p.name}</b></a><div><b>${R(st.price_normal)}</b> <small>· ${st.bulk_min_qty}+ pç ${R(st.price_bulk)}</small></div>${tot(p)<1?'<b>ESGOTADO</b>':`<a class="btn" style="display:block;padding:9px;margin-top:6px" href="#/p/${p.slug}">Adicionar ao carrinho</a>`}</div></div>`}
+function tf(id){fav=fav.includes(id)?fav.filter(x=>x!=id):[...fav,id];S('dz_f',fav);route()}
+const rowv=(t,l)=>l.length?`<h2>${t}</h2><div class="grid">${l.slice(0,8).map(card).join('')}</div>`:'';
+const empty='<div class="bar">Nenhum produto cadastrado ainda.</div>';
+function home(){const a=act();return `<div class="hero"><h1>Seu estilo.<br>Sua zona.</h1><p>Streetwear para quem tem presença.</p><a class="btn" href="#/produtos">VER PRODUTOS</a></div><div class="bar">1 a ${st.bulk_min_qty-1} peças: ${R(st.price_normal)} cada · ${st.bulk_min_qty}+ peças: ${R(st.price_bulk)} cada (misture modelos e tamanhos)</div><h2>Categorias</h2><div class="tiles">${CAT.map(c=>`<a href="#/cat/${c.slug}">${c.name}</a>`).join('')}</div>${a.length?rowv('Lançamentos',a.filter(p=>p.is_new))+rowv('Ofertas',a.filter(p=>p.is_offer))+rowv('Destaques',a.filter(p=>p.is_featured))+rowv('Escolha seu drip',a):empty}<h2>Confiança</h2><div class="trust"><div>🔒 Compra segura</div><div>💬 Atendimento via WhatsApp</div><div>📦 Envio para todo o Brasil</div><div>🔁 Política de troca</div></div>`}
+function list(cat){const u=new URLSearchParams(location.hash.split('?')[1]||''),q=(u.get('q')||'').toLowerCase(),sz=u.get('sz'),o=u.get('o')||'',av=u.get('av');
+let l=act().filter(p=>(!cat||(cat=='lancamentos'?p.is_new:cat=='ofertas'?p.is_offer:p.categories?.slug==cat))&&(!q||[p.name,p.code,catn(p),p.brand,p.model].join(' ').toLowerCase().includes(q))&&(!sz||vs(p).some(v=>v.size==sz))&&(!av||tot(p)>0));
+if(o=='r')l.sort((a,b)=>b.created_at.localeCompare(a.created_at));if(o=='s')l.sort((a,b)=>b.sold_count-a.sold_count);if(o=='f')l=l.filter(p=>p.is_featured).concat(l.filter(p=>!p.is_featured));
+const n=cat?(CAT.find(c=>c.slug==cat)?.name||(cat=='lancamentos'?'Lançamentos':'Ofertas')):'Todos os produtos',pg=l.slice(0,24*(page+1));
+return `<h1>${n}</h1><div class="row"><select style="width:auto" onchange="fl('sz',this.value)"><option value="">Tamanho</option>${SZ.map(s=>`<option ${s==sz?'selected':''}>${s}</option>`).join('')}</select><select style="width:auto" onchange="fl('av',this.value)"><option value="">Todos</option><option value="1" ${av?'selected':''}>Disponíveis</option></select><select style="width:auto" onchange="fl('o',this.value)"><option value="">Ordenar</option><option value="r">Mais recentes</option><option value="s">Mais vendidos</option><option value="f">Destaques</option></select></div><br>${l.length?`<div class="grid">${pg.map(card).join('')}</div>${l.length>pg.length?'<p style="text-align:center"><button class="btn o" onclick="page++;route()">Carregar mais</button></p>':''}`:(P.length?'<p class="mu">Nada encontrado.</p>':empty)}`}
+function fl(k,v){const h=location.hash.split('?')[0],u=new URLSearchParams(location.hash.split('?')[1]||'');v?u.set(k,v):u.delete(k);location.hash=h+'?'+u}
+function prod(slug){const p=P.find(x=>x.slug==slug);if(!p)return'<p>Produto não encontrado.</p>';document.title=p.name+' | DRIPZONE';track('view_item',{id:p.id});const g=imgs(p),b=g[gi]?iu(g[gi].storage_path):'';
+return `<div class="pg"><div><div class="big" style="background-image:url(${b})"></div><div class="th">${g.map((x,i)=>`<span class="${i==gi?'on':''}" style="background-image:url(${iu(x.storage_path)})" onclick="gi=${i};route()"></span>`).join('')}</div></div><div><small>Cód. ${p.code||'-'}</small><h1 style="margin-top:4px">${p.name}</h1><div style="font-size:22px;font-weight:800">${R(unit(pieces()+qty))} <small>por peça</small></div><div class="bar">1 a ${st.bulk_min_qty-1} peças: ${R(st.price_normal)} · ${st.bulk_min_qty}+ peças: ${R(st.price_bulk)} (total do carrinho)</div><p>${(p.description||'').replace(/</g,'&lt;')}</p><label>Tamanho</label><div class="row">${vs(p).map(v=>`<button class="sz ${sel==v.id?'on':''}" ${v.stock<1?'disabled':''} onclick="sel='${v.id}';route()">${v.size}${v.stock<1?' · ESGOTADO':''}</button>`).join('')}</div><label>Quantidade</label><div class="row"><button class="sz" onclick="qty=Math.max(1,qty-1);route()">−</button><b>${qty}</b><button class="sz" onclick="qty++;route()">+</button></div><br><div class="row"><button class="btn" style="flex:1" onclick="add('${p.id}',0)">Adicionar ao carrinho</button><button class="btn o" style="flex:1" onclick="add('${p.id}',1)">Comprar agora</button></div><br><div class="row"><a class="btn o" target="_blank" href="https://wa.me/?text=${encodeURIComponent(p.name+' '+location.href)}">WhatsApp</a><button class="btn o" onclick="navigator.clipboard&&navigator.clipboard.writeText(location.href)">Copiar link</button><button class="btn o" onclick="tf('${p.id}')">${fav.includes(p.id)?'♥':'♡'}</button></div><p class="mu">Envio para todo o Brasil. Trocas conforme <a href="#/info/trocas"><u>política</u></a>.</p></div></div>${rowv('Relacionados',act().filter(x=>x.id!=p.id&&x.category_id==p.category_id))}`}
+function add(pid,go){const p=P.find(x=>x.id==pid),v=vs(p).find(x=>x.id==sel);if(!v)return alert('Escolha um tamanho');const k=cart.find(c=>c.vid==v.id),have=(k?k.q:0)+qty;if(have>v.stock)return alert('Estoque insuficiente');k?k.q=have:cart.push({vid:v.id,pid,size:v.size,q:qty});saveC();track('add_to_cart',{id:pid});qty=1;go?location.hash='#/carrinho':(hdr(),alert(msg()))}
+function msg(){const n=pieces(),m=st.bulk_min_qty;return n>=m?`Você atingiu ${m} peças! Agora suas peças estão por ${R(st.price_bulk)} cada.`:n?`Adicione mais ${m-n} peça(s) e pague ${R(st.price_bulk)} por peça.`:''}
+function sums(){const n=pieces(),u=unit(n),sub=n*st.price_normal,t=n*u,fr=+st.flat_shipping||0;return{n,u,sub,d:sub-t,fr,t:t+fr}}
+function cartV(){const s=sums();if(!cart.length)return '<h1>Carrinho</h1><p class="mu">Seu carrinho está vazio.</p><a class="btn" href="#/produtos">Continuar comprando</a>';
+return `<h1>Carrinho</h1><div class="pg"><div>${cart.map((c,i)=>{const p=P.find(x=>x.id==c.pid)||{name:'(indisponível)'};return `<div class="ci"><div class="im" ${p.id?mi(p):''}></div><div style="flex:1"><b>${p.name}</b><br><small>Tam. ${c.size} · ${R(s.u)}</small><div class="row"><button class="sz" onclick="cq(${i},-1)">−</button><b>${c.q}</b><button class="sz" onclick="cq(${i},1)">+</button><button class="sz" onclick="cart.splice(${i},1);saveC();route()">🗑</button></div></div></div>`}).join('')}<div class="bar">${msg()}</div><a class="btn o" href="#/produtos">Continuar comprando</a></div><div><div class="bar">Peças: ${s.n} · Faixa: ${R(s.u)}/peça<br>Subtotal: ${R(s.sub)}<br>Desconto por quantidade: −${R(s.d)}<br>Frete: ${s.fr?R(s.fr):'a combinar'}<br><span style="font-size:18px">Total: ${R(s.t)}</span></div><h2>Seus dados</h2><div class="f2">${[['nome','Nome','full'],['cpf','CPF'],['wpp','WhatsApp'],['mail','E-mail','full'],['cep','CEP'],['uf','Estado'],['cid','Cidade'],['bai','Bairro'],['rua','Rua','full'],['num','Número'],['comp','Complemento']].map(f=>`<div class="${f[2]||''}"><label>${f[1]}</label><input id="k_${f[0]}" value="${L('dz_u',{})[f[0]]||''}"></div>`).join('')}</div><br><button class="btn w" onclick="wa()">FINALIZAR PEDIDO PELO WHATSAPP</button><p class="mu" style="font-size:12px">Pagamento online (PIX/cartão) ainda não está ativo; o pedido segue pelo WhatsApp.</p></div></div>`}
+function cq(i,d){const c=cart[i],p=P.find(x=>x.id==c.pid),v=p&&vs(p).find(x=>x.id==c.vid);if(d>0&&v&&c.q+1>v.stock)return alert('Estoque insuficiente');c.q+=d;if(c.q<1)cart.splice(i,1);saveC();track('qty_change',{});route()}
+function wa(){const u={};document.querySelectorAll('[id^=k_]').forEach(e=>u[e.id.slice(2)]=e.value.trim());if(!u.nome||!u.wpp)return alert('Informe nome e WhatsApp');S('dz_u',u);const s=sums();
+const t=`*Pedido DRIPZONE*\nNome: ${u.nome}\nCPF: ${u.cpf}\nWhatsApp: ${u.wpp}\nEndereço: ${u.rua}, ${u.num} ${u.comp} - ${u.bai}, ${u.cid}/${u.uf} CEP ${u.cep}\n\n`+cart.map(c=>{const p=P.find(x=>x.id==c.pid)||{};return `• ${p.name} (${p.code||''}) tam. ${c.size} x${c.q} = ${R(c.q*s.u)}`}).join('\n')+`\n\nPeças: ${s.n}\nFaixa: ${R(s.u)}/peça\nSubtotal: ${R(s.sub)}\nDesconto: −${R(s.d)}\nFrete: ${s.fr?R(s.fr):'a combinar'}\n*Total: ${R(s.t)}*`;track('whatsapp_click',{});open('https://wa.me/'+st.whatsapp+'?text='+encodeURIComponent(t),'_blank')}
+/* ===== ADMIN ===== */
+function admin(){if(!adm)return `<h1>Painel</h1><label>E-mail</label><input id="em" type="email"><label>Senha</label><input id="ps" type="password"><br><br><button class="btn" onclick="login()">Entrar</button>`;
+return `<h1>Admin</h1><div class="row"><a class="btn" href="#/admin/novo">+ Adicionar produto</a><button class="btn o" onclick="sb.auth.signOut().then(()=>location.reload())">Sair</button></div><h2>Produtos (${P.length})</h2>${P.map(p=>`<div class="ci"><div class="im" ${mi(p)}></div><div style="flex:1"><b>${p.name}</b><br><small>${p.code||''} · estoque ${tot(p)} · ${p.active?'ativo':'inativo'}</small></div><a class="sz" href="#/admin/e/${p.id}">Editar</a><button class="sz" onclick="delp('${p.id}')">🗑</button></div>`).join('')}<h2>Configurações e regra de preço</h2><div class="f2">${[['price_normal','Preço normal (R$)'],['price_bulk','Preço na quantidade (R$)'],['bulk_min_qty','Peças p/ preço menor'],['flat_shipping','Frete fixo (R$)'],['whatsapp','WhatsApp (55+DDD)']].map(f=>`<div><label>${f[1]}</label><input id="s_${f[0]}" value="${st[f[0]]}"></div>`).join('')}</div><br><button class="btn" onclick="savs()">Salvar configurações</button>`}
+async function login(){const{error}=await sb.auth.signInWithPassword({email:$('#em').value,password:$('#ps').value});if(!er(error))load()}
+async function savs(){const o={};['price_normal','price_bulk','bulk_min_qty','flat_shipping'].forEach(k=>o[k]=+$('#s_'+k).value);o.whatsapp=$('#s_whatsapp').value.trim();if(er((await sb.from('store_settings').update(o).eq('id',1)).error))return;alert('Salvo');load()}
+async function delp(id){if(!confirm('Excluir produto e fotos?'))return;const p=P.find(x=>x.id==id);await sb.storage.from('product-images').remove(imgs(p).map(i=>i.storage_path));if(!er((await sb.from('products').delete().eq('id',id)).error))load()}
+function form(id){if(!adm)return admin();if(!draft){const p=id&&P.find(x=>x.id==id);draft=p?{...p,stock:Object.fromEntries(vs(p).map(v=>[v.size,v.stock])),sizes:vs(p).map(v=>v.size),isNew:false}:{id:crypto.randomUUID(),name:'',category_id:CAT[0]?.id,code:'',description:'',sizes:['M','G','GG'],stock:{},is_new:false,is_featured:false,is_offer:false,active:true,isNew:true};files=[]}const d=draft,ex=P.find(x=>x.id==d.id),g=ex?imgs(ex):[];
+return `<h1>${d.isNew?'Adicionar':'Editar'} produto</h1><label>Nome</label><input id="d_name" value="${d.name}"><label>Categoria</label><select id="d_cat">${CAT.map(c=>`<option value="${c.id}" ${c.id==d.category_id?'selected':''}>${c.name}</option>`).join('')}</select><label>Código</label><input id="d_code" value="${d.code||''}"><label>Descrição</label><textarea id="d_desc" rows="3">${d.description||''}</textarea>
+<label>Fotos (a primeira é a principal)</label><input type="file" accept="image/jpeg,image/png,image/webp" multiple onchange="pick(this.files)"><div class="thumbs" style="margin-top:8px">${g.map((x,i)=>`<div><span style="background-image:url(${iu(x.storage_path)})"></span>${i?`<a onclick="mp('${x.id}')"><u>tornar principal</u></a><br>`:'<b>Principal</b><br>'}${i?`<a class="sz" onclick="mvi(${i},-1)">←</a>`:''}${i<g.length-1?`<a class="sz" onclick="mvi(${i},1)">→</a>`:''} <a onclick="di('${x.id}','${x.storage_path}')">🗑</a></div>`).join('')}${files.map((f,i)=>`<div><span style="background-image:url(${f.u})"></span>nova <a onclick="files.splice(${i},1);route()">🗑</a></div>`).join('')}</div>
+<label>Tamanhos e estoque</label><div class="row">${SZ.map(s=>`<label style="margin:0"><input type="checkbox" ${d.sizes.includes(s)?'checked':''} onchange="ts('${s}',this.checked)"> ${s}</label>${d.sizes.includes(s)?`<input style="width:70px" type="number" min="0" placeholder="qtd" value="${d.stock[s]||''}" oninput="draft.stock['${s}']=+this.value">`:''}`).join('')}</div><div class="row" style="margin-top:12px">${[['is_new','Lançamento'],['is_featured','Destaque'],['is_offer','Oferta'],['active','Ativo']].map(f=>`<label style="margin:0"><input type="checkbox" ${d[f[0]]?'checked':''} onchange="draft.${f[0]}=this.checked"> ${f[1]}</label>`).join('')}</div><br><button class="btn" id="sv" onclick="sv()">SALVAR PRODUTO</button>`}
+function rd(){const g=k=>$('#d_'+k);if(!g('name'))return;draft.name=g('name').value;draft.category_id=g('cat').value;draft.code=g('code').value;draft.description=g('desc').value}
+const toWebp=f=>new Promise(r=>{const i=new Image();i.onload=()=>{const s=Math.min(1,1400/Math.max(i.width,i.height)),c=document.createElement('canvas');c.width=i.width*s;c.height=i.height*s;c.getContext('2d').drawImage(i,0,0,c.width,c.height);c.toBlob(b=>r(b),'image/webp',.85)};i.src=URL.createObjectURL(f)});
+function pick(fl){rd();[...fl].forEach(f=>files.push({f,u:URL.createObjectURL(f)}));route()}
+function ts(s,c){rd();draft.sizes=c?[...draft.sizes,s]:draft.sizes.filter(x=>x!=s);route()}
+async function setOrder(ids){await Promise.all(ids.map((id,position)=>sb.from('product_images').update({position}).eq('id',id)));await load()}
+async function mp(id){rd();const g=imgs(P.find(x=>x.id==draft.id)).map(i=>i.id);await setOrder([id,...g.filter(x=>x!=id)])}
+async function mvi(i,d){rd();const g=imgs(P.find(x=>x.id==draft.id)).map(i=>i.id);[g[i],g[i+d]]=[g[i+d],g[i]];await setOrder(g)}
+async function di(id,path){rd();await sb.storage.from('product-images').remove([path]);await sb.from('product_images').delete().eq('id',id);await load()}
+async function sv(){rd();const d=draft;if(!d.name)return alert('Informe o nome');$('#sv').disabled=true;$('#sv').textContent='Salvando…';
+const slug=(d.slug)||(d.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')+'-'+d.id.slice(0,4));
+const row={id:d.id,slug,name:d.name,code:d.code||null,description:d.description,category_id:d.category_id,is_new:d.is_new,is_featured:d.is_featured,is_offer:d.is_offer,active:d.active};
+if(er((await sb.from('products').upsert(row)).error)){$('#sv').disabled=false;return}
+const vr=d.sizes.map(s=>({product_id:d.id,size:s,color:'',stock:+d.stock[s]||0}));if(vr.length&&er((await sb.from('product_variants').upsert(vr,{onConflict:'product_id,size,color'})).error))return;
+const rm=SZ.filter(s=>!d.sizes.includes(s));if(rm.length)await sb.from('product_variants').delete().eq('product_id',d.id).in('size',rm);
+const ex=P.find(x=>x.id==d.id);let pos=ex?imgs(ex).length:0;for(const x of files){const path=d.id+'/'+crypto.randomUUID()+'.webp',{error}=await sb.storage.from('product-images').upload(path,await toWebp(x.f),{contentType:'image/webp'});if(er(error))break;await sb.from('product_images').insert({product_id:d.id,storage_path:path,position:pos++})}
+draft=null;files=[];await load();location.hash='#/admin'}
+const INFO={trocas:['Trocas e devoluções','Texto a definir pela loja.'],privacidade:['Política de privacidade','Texto a definir pela loja (LGPD).'],termos:['Termos de uso','Texto a definir pela loja.']};
+function hdr(){$('#cc').textContent=pieces();$('#fw').textContent=(st.whatsapp||'').replace(/^55(\d\d)(\d{5})(\d{4})$/,'($1) $2-$3');$('#nav').innerHTML='<a href="#/produtos">Todos</a>'+CAT.map(c=>`<a href="#/cat/${c.slug}">${c.name}</a>`).join('')+'<a href="#/cat/lancamentos">Lançamentos</a><a href="#/cat/ofertas">Ofertas</a>'}
+function route(){if(!sb)return;const h=location.hash.replace(/^#/,'').split('?')[0]||'/',s=h.split('/');if(s[1]!='admin')draft=null;document.title='DRIPZONE Streetwear';let v;
+if(h=='/')v=home();else if(h=='/produtos')v=list();else if(s[1]=='cat')v=list(s[2]);else if(s[1]=='p')v=prod(s[2]);else if(h=='/carrinho')v=cartV();else if(h=='/fav')v=`<h1>Favoritos</h1><div class="grid">${P.filter(p=>fav.includes(p.id)).map(card).join('')||'<p class="mu">Nenhum favorito.</p>'}</div>`;else if(h=='/admin')v=admin();else if(h=='/admin/novo')v=form();else if(s[1]=='admin'&&s[2]=='e')v=form(s[3]);else if(s[1]=='info'&&INFO[s[2]])v=`<h1>${INFO[s[2]][0]}</h1><p>${INFO[s[2]][1]}</p>`;else v=home();
+$('#app').innerHTML=v;hdr()}
+let last='';addEventListener('hashchange',()=>{const h=location.hash.split('?')[0];if(h!=last){sel=null;gi=0;qty=1;page=0;scrollTo(0,0)}last=h;route()});
+$('#q').addEventListener('keydown',e=>{if(e.key=='Enter')location.hash='#/produtos?q='+encodeURIComponent(e.target.value)});
+if(sb)load();
+</script></body></html>
